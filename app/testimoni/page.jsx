@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Testimoni – Hidayah TV',
-  description: 'Apa kata pelanggan tentang jasa pemasangan antena TV digital, parabola, dan penangkal petir dari Hidayah TV.',
+  title: 'Testimoni – Hidayah Membrane',
+  description: 'Apa kata pelanggan tentang jasa pemasangan kanopi membran, atap membran, dan gazebo dari Hidayah Membrane.',
 };
 
 export default function TestimoniPage() {
@@ -11,54 +11,54 @@ export default function TestimoniPage() {
     {
       id: 1,
       name: 'Rina',
-      text: 'Pasang antena digital di rumah, sekarang semua channel jernih banget bebas semut. Teknisinya ramah, kerjanya cepat dan rapi. Sangat puas!',
+      text: 'Pasang kanopi membran carport di rumah, hasilnya rapi banget dan teduh. Teknisinya ramah, kerjanya cepat dan rapi. Sangat puas!',
     },
     {
       id: 2,
       name: 'Bagas',
-      text: 'Dulu TV sering "No Signal" kalau hujan. Setelah dibenahi Hidayah TV, gambar stabil terus. Respon cepat dan harga masuk akal. Recommended!',
+      text: 'Dulu carport sering kehujanan kalau angin miring. Setelah dipasang Hidayah Membrane, aman total. Respon cepat dan harga masuk akal. Recommended!',
     },
     {
       id: 3,
       name: 'Dandy',
-      text: 'Pasang parabola buat di rumah yang susah sinyal UHF. Channel-nya banyak, ada lokal sampai olahraga. Mantap pelayanannya!',
+      text: 'Pasang atap membran buat void ruko yang susah kena panas siang. Desainnya bagus, hasilnya kokoh. Mantap pelayanannya!',
     },
     {
       id: 4,
       name: 'Maya',
-      text: 'Minta dipasang penangkal petir karena antena saya tinggi. Dikerjakan rapi, dijelaskan soal grounding-nya juga. Jadi tenang kalau hujan badai.',
+      text: 'Minta dibuatkan gazebo membran di taman rumah. Dikerjakan rapi, dijelaskan soal rangka dan tegangan membrannya juga. Jadi tenang kalau hujan deras.',
     },
     {
       id: 5,
       name: 'Heri',
-      text: 'Survei lokasi cepat, pemasangan tepat waktu, hasil siaran jernih. Kualitas pengerjaannya tidak mengecewakan.',
+      text: 'Survei lokasi cepat, pemasangan tepat waktu, hasil kanopi kokoh dan presisi. Kualitas pengerjaannya tidak mengecewakan.',
     },
     {
       id: 6,
       name: 'Andri',
-      text: 'Setting Set Top Box yang tadinya error langsung beres ditangani teknisinya. Sekarang TV digital lancar. Terima kasih Hidayah TV!',
+      text: 'Kain membran yang tadinya kendur langsung beres ditangani teknisinya. Sekarang atap membran kembali kencang. Terima kasih Hidayah Membrane!',
     },
     {
       id: 7,
       name: 'Dewinta',
-      text: 'Antena lama roboh kena angin, langsung dibantu pasang ulang di hari yang sama. Kerjanya bersih dan profesional. Recommended banget!',
+      text: 'Kanopi lama sobek kena angin, langsung dibantu ganti membran baru di hari yang sama. Kerjanya bersih dan profesional. Recommended banget!',
     },
     {
       id: 8,
       name: 'Alif',
-      text: 'Pindah rumah dan butuh bongkar-pasang antena. Semua diurus rapi, gambar langsung jernih di rumah baru. Sangat terbantu.',
+      text: 'Renovasi rumah dan butuh bongkar-pasang kanopi. Semua diurus rapi, hasilnya langsung kokoh di rumah baru. Sangat terbantu.',
     },
     {
       id: 9,
       name: 'Marissa',
-      text: 'Pasang parabola mini, channel religi dan internasional lengkap. Pemasangannya rapi dan teknisinya sabar menjelaskan. Senang sekali!',
+      text: 'Pasang tenda membran cafe outdoor, desainnya lengkung modern, tamu jadi betah duduk lama. Pemasangannya rapi dan teknisinya sabar menjelaskan. Senang sekali!',
     },
   ];
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
 
-      {/* Banner Header - Maroon Primary */}
+      {/* Banner Header - Emerald Primary */}
       <section className="bg-primary py-20 text-center text-white px-6 relative overflow-hidden">
         {/* Ornamen Halus untuk estetika */}
         <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -68,7 +68,7 @@ export default function TestimoniPage() {
           <h1 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight">Testimoni</h1>
           {/* Garis Aksen Emas */}
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-rose-100 text-lg font-medium opacity-90 italic">Kepercayaan pelanggan adalah aset terbesar kami.</p>
+          <p className="text-emerald-100 text-lg font-medium opacity-90 italic">Kepercayaan pelanggan adalah aset terbesar kami.</p>
         </div>
       </section>
 
@@ -79,7 +79,7 @@ export default function TestimoniPage() {
           <svg className="absolute top-2 left-4 w-16 h-16 text-gray-100 transform -rotate-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" /></svg>
 
           <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed relative z-10">
-            "Respon cepat, teknisi ramah, TV jadi jernih banget, dan pemasangan rapi — itulah yang selalu kami usahakan untuk setiap pelanggan Hidayah TV."
+            "Respon cepat, teknisi ramah, kanopi jadi kokoh banget, dan pemasangan rapi — itulah yang selalu kami usahakan untuk setiap pelanggan Hidayah Membrane."
           </p>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function TestimoniPage() {
           200+ Pelanggan Puas
         </div>
         <p className="text-gray-600 text-center max-w-2xl leading-relaxed">
-          Berikut testimoni yang menggambarkan pengalaman mereka bersama <strong className="text-primary">Hidayah TV</strong>. Kepuasan Anda adalah prioritas dan motivasi bagi kami untuk terus memberikan yang terbaik.
+          Berikut testimoni yang menggambarkan pengalaman mereka bersama <strong className="text-primary">Hidayah Membrane</strong>. Kepuasan Anda adalah prioritas dan motivasi bagi kami untuk terus memberikan yang terbaik.
         </p>
       </section>
 
@@ -106,7 +106,7 @@ export default function TestimoniPage() {
           {testimonials.map((testi) => (
             <div
               key={testi.id}
-              className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full transform hover:-translate-y-1 relative overflow-hidden group"
+              className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-gray-100 flex flex-col h-full transform hover:-translate-y-1 relative overflow-hidden group"
             >
               {/* Garis atas dekoratif yang muncul saat hover */}
               <div className="absolute top-0 left-0 w-full h-1 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -128,12 +128,12 @@ export default function TestimoniPage() {
               {/* Profil Pengguna */}
               <div className="mt-8 flex items-center gap-4 pt-4 border-t border-gray-50">
                 {/* Avatar Inisial */}
-                <div className="w-11 h-11 bg-rose-50 rounded-full flex items-center justify-center text-primary font-black text-lg shadow-inner">
+                <div className="w-11 h-11 bg-emerald-50 rounded-full flex items-center justify-center text-primary font-black text-lg shadow-inner">
                   {testi.name.charAt(0)}
                 </div>
                 <div>
                   <p className="font-bold text-gray-900 leading-tight">{testi.name}</p>
-                  <p className="text-xs text-gray-400 mt-0.5 tracking-wide">Pelanggan Hidayah TV</p>
+                  <p className="text-xs text-gray-400 mt-0.5 tracking-wide">Pelanggan Hidayah Membrane</p>
                 </div>
               </div>
             </div>

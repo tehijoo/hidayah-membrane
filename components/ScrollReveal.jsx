@@ -2,18 +2,20 @@
 
 import { motion } from "framer-motion";
 
-export default function ScrollReveal({ children, direction = "up" }) {
+export default function ScrollReveal({ children, direction = "up", delay = 0 }) {
   const variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: direction === "up" ? 50 : direction === "down" ? -50 : 0,
       x: direction === "left" ? 50 : direction === "right" ? -50 : 0,
+      scale: 0.97,
     },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      x: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }
     },
   };
 

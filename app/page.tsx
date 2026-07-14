@@ -1,5 +1,6 @@
 "use client"; // app/page.tsx
 import ScrollReveal from "@/components/ScrollReveal";
+import { CONTACT, waLink } from "@/lib/contact";
 import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 
@@ -11,22 +12,22 @@ export default function Home() {
       // 2. Data Konten untuk 3 Slide
       const slides = [
         {
-          title: "Siaran TV\nSuper Jernih",
-          label: "Antena TV Digital",
-          description: "Nikmati siaran TV digital bebas semut tanpa biaya bulanan. Pemasangan antena HD oleh teknisi ahli, bergaransi, dan gambar dijamin 100% jernih.",
-          bgImage: "/antenatv.jpeg", // Pastikan gambar ini ada di folder public
+          title: "Kanopi Membran\nTeduh & Modern",
+          label: "Kanopi Membran",
+          description: "Lindungi carport dan teras dari panas serta hujan dengan kanopi membran berkualitas. Desain modern, tahan lama, dan dikerjakan oleh teknisi ahli.",
+          bgImage: "/images-canopy/60.jpeg",
         },
         {
-          title: "Ribuan Channel\nVia Parabola",
-          label: "Parabola Mini & Besar",
-          description: "Solusi terbaik untuk area yang sulit sinyal UHF. Tangkap channel lokal, internasional, religi, hingga olahraga dengan parabola berkualitas.",
-          bgImage: "/parabola-besar.jpg",
+          title: "Kanopi Alderon\nAnti Karat",
+          label: "Kanopi Alderon",
+          description: "Solusi atap UPVC yang ringan, anti karat, dan tidak berisik saat hujan. Peredam panas terbaik untuk rumah maupun bangunan usaha.",
+          bgImage: "/images-canopy/40.jpeg",
         },
         {
-          title: "Perlindungan\nPetir Maksimal",
-          label: "Penangkal Petir",
-          description: "Antena tinggi di atap rawan tersambar petir. Lindungi rumah dan perangkat elektronik Anda dengan instalasi penangkal petir grounding standar aman.",
-          bgImage: "/penangkal.jpeg",
+          title: "Gazebo &\nTenda Membran",
+          label: "Gazebo & Tenda Membran",
+          description: "Ciptakan ruang outdoor yang nyaman dan estetis untuk taman, cafe, hingga resto dengan gazebo dan tenda membran desain lengkung modern.",
+          bgImage: "/images-canopy/90.jpeg",
         }
       ];
 
@@ -49,7 +50,7 @@ export default function Home() {
         <main className="w-full bg-gray-50 overflow-x-hidden font-sans">
 
           {/* --- HERO SECTION SLIDER --- */}
-          <section className="relative w-full min-h-[600px] lg:h-[85vh] flex items-center bg-primary overflow-hidden">
+          <section className="relative w-full min-h-[640px] lg:min-h-[760px] flex items-center bg-primary overflow-hidden py-20 lg:py-24">
 
             {/* Gambar Background Slider */}
             {slides.map((slide, index) => (
@@ -84,9 +85,9 @@ export default function Home() {
             <div className="relative z-10 w-full max-w-7xl mx-auto px-10 md:px-16 flex flex-col lg:flex-row items-center justify-between">
 
               {/* Konten Teks Kiri */}
-              <div className="w-full lg:w-3/5 flex flex-col items-start pt-10 md:pt-0">
+              <div className="w-full lg:w-3/5 flex flex-col items-start">
                 <h1
-                  className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white uppercase leading-[1.1] tracking-tight drop-shadow-2xl transition-all duration-500"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white uppercase leading-[1.1] tracking-tight drop-shadow-2xl transition-all duration-500"
                   style={{ WebkitTextStroke: '1px rgba(0,0,0,0.1)', whiteSpace: 'pre-line' }}
                 >
                   {slides[currentSlide].title}
@@ -100,7 +101,7 @@ export default function Home() {
                   {slides[currentSlide].description}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full lg:w-4/5 mt-8 gap-4 pb-12 lg:pb-0">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full lg:w-4/5 mt-8 gap-4">
                   <div className="flex gap-1 text-secondary">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
@@ -110,10 +111,10 @@ export default function Home() {
                   <div className="flex flex-col items-start sm:items-end gap-1 text-white text-xs md:text-sm">
                     <div className="flex gap-3 mb-1">
                       {/* Link Sosmed Anda */}
-                      <a href="https://instagram.com/hidayah.canopy" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-secondary w-7 h-7 flex items-center justify-center rounded-full transition-all uppercase text-[10px] font-bold">IG</a>
-                      <a href="https://facebook.com/machmud.harjianto.9" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-secondary w-7 h-7 flex items-center justify-center rounded-full transition-all uppercase text-[10px] font-bold">FB</a>
+                      <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-secondary w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 uppercase text-[10px] font-bold">IG</a>
+                      <a href={CONTACT.facebookUrl} target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-secondary w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 uppercase text-[10px] font-bold">FB</a>
                     </div>
-                    <span className="opacity-80 tracking-widest mt-1">www.hidayahtv.com</span>
+                    <span className="opacity-80 tracking-widest mt-1">www.hidayahmembrane.com</span>
                   </div>
                 </div>
               </div>
@@ -124,16 +125,16 @@ export default function Home() {
               <h4 className="text-primary font-black mb-4 border-b pb-2 text-sm tracking-widest">LAYANAN KAMI</h4>
               <ul className="space-y-5 text-base font-bold text-gray-800">
                 <li className={`flex items-center gap-3 transition-all duration-300 ${currentSlide === 0 ? 'text-secondary translate-x-2' : ''}`}>
-                  <span className="text-primary font-black text-2xl">01.</span> Antena TV Digital
+                  <span className="text-primary font-black text-2xl">01.</span> Kanopi Membran
                 </li>
                 <li className={`flex items-center gap-3 transition-all duration-300 ${currentSlide === 1 ? 'text-secondary translate-x-2' : ''}`}>
-                  <span className="text-primary font-black text-2xl">02.</span> Parabola Mini &amp; Besar
-                </li>
-                <li className="flex items-center gap-3 transition-all duration-300">
-                  <span className="text-primary font-black text-2xl">03.</span> Service &amp; Perbaikan
+                  <span className="text-primary font-black text-2xl">02.</span> Kanopi Alderon
                 </li>
                 <li className={`flex items-center gap-3 transition-all duration-300 ${currentSlide === 2 ? 'text-secondary translate-x-2' : ''}`}>
-                  <span className="text-primary font-black text-2xl">04.</span> Penangkal Petir
+                  <span className="text-primary font-black text-2xl">03.</span> Gazebo &amp; Tenda Membran
+                </li>
+                <li className="flex items-center gap-3 transition-all duration-300">
+                  <span className="text-primary font-black text-2xl">04.</span> Service &amp; Perbaikan
                 </li>
               </ul>
             </div>
@@ -156,25 +157,25 @@ export default function Home() {
       </section>
 
       {/* --- SECTION SELAMAT DATANG --- */}
-      <section className="relative z-20 -mt-10 md:-mt-16 px-4 md:px-8 max-w-5xl mx-auto">
+      <section className="relative z-20 -mt-8 md:-mt-12 px-4 md:px-8 max-w-5xl mx-auto">
         <ScrollReveal direction="up">
           <div className="w-full bg-white rounded-2xl shadow-xl p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4 w-full md:w-auto">
-              <div className="w-14 h-14 bg-rose-50 rounded-full flex items-center justify-center text-primary font-bold text-lg shrink-0">TV</div>
+              <div className="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center text-primary font-bold text-lg shrink-0">HM</div>
               <div>
                 <p className="text-gray-500 text-sm">Selamat datang di</p>
-                <h2 className="text-xl md:text-3xl font-bold text-gray-900">Hidayah TV</h2>
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900">Hidayah Membrane</h2>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 bg-gray-50 p-2 sm:pl-6 rounded-2xl sm:rounded-full w-full md:w-auto border border-gray-100 shadow-sm">
               <p className="text-sm text-gray-600 text-center sm:text-left hidden sm:block font-medium">
-                Jasa Pasang Antena TV & Penangkal Petir <br className="hidden md:block"/> Profesional, Bergaransi, dan Terpercaya
+                Jasa Pasang Kanopi &amp; Atap Membran <br className="hidden md:block"/> Profesional, Bergaransi, dan Terpercaya
               </p>
 
               {/* Tombol Button diubah menjadi tag <a> untuk WhatsApp */}
               <a
-                href="https://wa.me/628212185448?text=Halo%20Hidayah%20TV,%20saya%20ingin%20konsultasi%20pemasangan%20antena/penangkal%20petir."
+                href={waLink("Halo Hidayah Membrane, saya ingin konsultasi pemasangan kanopi/atap membran.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary hover:bg-primary-dark text-white px-6 py-3.5 rounded-xl sm:rounded-full w-full sm:w-auto font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transform hover:-translate-y-1"
@@ -189,21 +190,21 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* --- SECTION AHLINYA ANTENA & PETIR --- */}
+      {/* --- SECTION AHLINYA KANOPI & ATAP MEMBRAN --- */}
       <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center mt-8 w-full">
         <div className="flex-1 w-full">
           <ScrollReveal direction="left">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-              Ahlinya <br/> Antena TV <br/> &amp; Penangkal Petir
+              Ahlinya <br/> Kanopi &amp; Atap <br/> Membran
             </h2>
             <div className="flex items-center gap-3 mb-6 bg-gray-50 w-fit px-4 py-2 rounded-lg">
-              <span className="bg-rose-100 text-primary p-1 rounded-full text-xs font-bold">✓</span>
-              <p className="font-medium text-gray-700">Gambar Jernih &amp; Pemasangan Bergaransi</p>
+              <span className="bg-emerald-100 text-primary p-1 rounded-full text-xs font-bold">✓</span>
+              <p className="font-medium text-gray-700">Material Berkualitas &amp; Pemasangan Bergaransi</p>
             </div>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Hidayah TV adalah spesialis jasa instalasi telekomunikasi visual dan sistem
-              keamanan grounding petir. Didukung teknisi berpengalaman, kami siap menghadirkan
-              siaran super jernih dan perlindungan maksimal untuk hunian maupun tempat usaha Anda.
+              Hidayah Membrane adalah spesialis jasa pembuatan dan pemasangan kanopi serta atap
+              membran. Didukung teknisi berpengalaman, kami siap menghadirkan struktur yang kokoh,
+              rapi, dan estetis untuk hunian maupun tempat usaha Anda.
             </p>
 
             <Link
@@ -222,9 +223,9 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-6 text-secondary">Keunggulan Kami</h3>
               <ul className="space-y-3 font-medium">
                 <li>- Teknisi Berpengalaman</li>
-                <li>- Gambar 100% Jernih (Bebas Semut)</li>
+                <li>- Material Membran Berkualitas</li>
                 <li>- Garansi Pemasangan</li>
-                <li>- Material Berkualitas</li>
+                <li>- Desain Custom Sesuai Kebutuhan</li>
                 <li>- Respon &amp; Pengerjaan Cepat</li>
               </ul>
             </div>
@@ -242,7 +243,7 @@ export default function Home() {
                   <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="w-full h-full"><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21.182 21.182a13.5 13.5 0 00-19.07 0M18.364 18.364a9 9 0 00-12.728 0M12 18.75h.008v.008H12v-.008z" /></svg>
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">Teknisi Berpengalaman</h4>
-                <p className="text-sm text-gray-500">Dikerjakan teknisi ahli yang sudah menangani ratusan pemasangan antena.</p>
+                <p className="text-sm text-gray-500">Dikerjakan teknisi ahli yang sudah menangani ratusan pemasangan kanopi &amp; atap membran.</p>
               </div>
             </ScrollReveal>
           </div>
@@ -252,8 +253,8 @@ export default function Home() {
                 <div className="w-16 h-16 mb-4 text-secondary">
                   <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="w-full h-full"><path strokeLinecap="round" strokeLinejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z" /></svg>
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Gambar 100% Jernih</h4>
-                <p className="text-sm text-gray-500">Siaran digital tajam dan bebas "semut", atau kami perbaiki sampai jernih.</p>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Desain Custom</h4>
+                <p className="text-sm text-gray-500">Bentuk dan ukuran kanopi disesuaikan dengan konsep bangunan Anda.</p>
               </div>
             </ScrollReveal>
           </div>
@@ -275,7 +276,7 @@ export default function Home() {
                   <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="w-full h-full"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">Material Berkualitas</h4>
-                <p className="text-sm text-gray-500">Antena, kabel, dan STB original berkualitas agar awet dan tahan lama.</p>
+                <p className="text-sm text-gray-500">Kain membran dan rangka baja berkualitas agar awet dan tahan lama.</p>
               </div>
             </ScrollReveal>
           </div>
@@ -283,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* --- SECTION LAYANAN KAMI BANNER --- */}
-      <section className="relative w-full bg-gradient-to-r from-primary via-primary-dark to-[#3f2326] pt-24 pb-16 overflow-hidden">
+      <section className="relative w-full bg-gradient-to-r from-primary via-primary-dark to-[#0a231b] pt-24 pb-16 overflow-hidden">
 
         {/* Ornamen Titik-titik */}
         <div className="absolute left-10 top-20 flex gap-2 opacity-30">
@@ -307,21 +308,13 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10 w-full">
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6">
-            <ScrollReveal direction="up">
-              <div className="bg-gray-50 p-2.5 rounded-3xl shadow-xl transform hover:-translate-y-2 transition duration-300">
-                <div className="w-36 h-36 md:w-48 md:h-48 bg-gray-200 rounded-2xl bg-cover bg-center" style={{ backgroundImage: "url('/antenatv.jpeg')" }}></div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="up">
-              <div className="bg-gray-50 p-2.5 rounded-3xl shadow-xl transform hover:-translate-y-2 transition duration-300">
-                <div className="w-36 h-36 md:w-48 md:h-48 bg-gray-200 rounded-2xl bg-cover bg-center" style={{ backgroundImage: "url('/parabola-besar.jpg')" }}></div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="up">
-              <div className="bg-gray-50 p-2.5 rounded-3xl shadow-xl transform hover:-translate-y-2 transition duration-300">
-                <div className="w-36 h-36 md:w-48 md:h-48 bg-gray-200 rounded-2xl bg-cover bg-center" style={{ backgroundImage: "url('/penangkal.jpeg')" }}></div>
-              </div>
-            </ScrollReveal>
+            {["/images-canopy/2.jpeg", "/images-canopy/3.jpeg", "/images-canopy/70.jpeg"].map((src, i) => (
+              <ScrollReveal direction="up" delay={i * 0.1} key={i}>
+                <div className="bg-gray-50 p-2.5 rounded-3xl shadow-xl transform hover:-translate-y-2 transition duration-300">
+                  <div className="w-36 h-36 md:w-48 md:h-48 bg-gray-200 rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url('${src}')` }}></div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
 
           <div className="flex-1 text-center lg:text-left mt-8 lg:mt-0">
@@ -342,7 +335,7 @@ export default function Home() {
 
               {/* Tautan Facebook */}
               <a
-                href="https://facebook.com/machmud.harjianto.9"
+                href={CONTACT.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center font-bold text-sm hover:bg-gray-200 hover:scale-110 transition-all duration-300 shadow-md"
@@ -352,7 +345,7 @@ export default function Home() {
 
               {/* Tautan Instagram */}
               <a
-                href="https://instagram.com/hidayah.canopy"
+                href={CONTACT.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center font-bold text-sm hover:bg-gray-200 hover:scale-110 transition-all duration-300 shadow-md"
@@ -367,8 +360,8 @@ export default function Home() {
 
         <ScrollReveal direction="left">
           <div className="text-center md:text-right text-white">
-            <h3 className="text-3xl md:text-4xl font-extrabold tracking-wide drop-shadow-md">Hidayah TV</h3>
-            <p className="text-xs md:text-sm tracking-widest text-gray-300 mt-1 uppercase font-semibold">Jasa Pasang Antena &amp; Penangkal Petir</p>
+            <h3 className="text-3xl md:text-4xl font-extrabold tracking-wide drop-shadow-md">Hidayah Membrane</h3>
+            <p className="text-xs md:text-sm tracking-widest text-gray-300 mt-1 uppercase font-semibold">Jasa Pasang Kanopi &amp; Atap Membran</p>
           </div>
         </ScrollReveal>
       </div>
@@ -383,36 +376,36 @@ export default function Home() {
             {[
               {
                 tag: "Jasa Pemasangan",
-                title: "Antena TV Digital",
-                desc: "Beralih ke siaran digital bebas biaya bulanan. Paket pemasangan antena HD lengkap dengan kabel, tiang, dan setting Set Top Box (STB) untuk TV tabung, LED, maupun Smart TV.",
-                image: "/antena2.jpeg",
-                link: "/layanan/antena-tv-digital"
+                title: "Kanopi Membran",
+                desc: "Kanopi membran untuk carport dan teras dengan rangka galvanis/hollow serta kain membran PVC/PVDF, tahan panas dan hujan.",
+                image: "/images-canopy/1.jpeg",
+                link: "/layanan/kanopi-membran"
               },
               {
                 tag: "Jasa Pemasangan",
-                title: "Parabola Mini & Besar",
-                desc: "Solusi untuk area yang sulit sinyal UHF. Pilihan satelit dan ragam channel lokal, internasional, religi, hingga olahraga dengan kualitas gambar stabil.",
-                image: "/parabola-kecil.jpg",
-                link: "/layanan/parabola"
+                title: "Kanopi Alderon",
+                desc: "Kanopi UPVC anti karat dengan peredam panas dan suara terbaik. Ringan, awet, dan tidak berisik saat hujan.",
+                image: "/images-canopy/40.jpeg",
+                link: "/layanan/kanopi-alderon"
+              },
+              {
+                tag: "Jasa Pemasangan",
+                title: "Gazebo & Tenda Membran",
+                desc: "Gazebo dan tenda membran untuk taman, cafe, dan resto outdoor. Desain lengkung modern yang menyatu dengan lanskap.",
+                image: "/images-canopy/90.jpeg",
+                link: "/layanan/gazebo-tenda-membran"
               },
               {
                 tag: "Jasa Service",
-                title: "Service & Perbaikan Antena",
-                desc: "Atasi masalah gambar putus-putus, 'No Signal', antena roboh, hingga setting STB yang error. Termasuk layanan bongkar-pasang antena saat pindah rumah.",
-                image: "/service.jpeg",
-                link: "/layanan/service-antena"
-              },
-              {
-                tag: "Jasa Pemasangan",
-                title: "Penangkal Petir",
-                desc: "Antena tinggi rawan tersambar petir. Instalasi penangkal petir dengan kabel tembaga murni, splitzen, dan grounding di bawah 5 Ohm untuk melindungi perangkat Anda.",
-                image: "/penangkal2.jpeg",
-                link: "/layanan/penangkal-petir"
+                title: "Service & Perbaikan Membran",
+                desc: "Atasi kain membran sobek, kendur, bocor, hingga rangka berkarat. Termasuk layanan bongkar-pasang saat renovasi.",
+                image: "/images-canopy/15.jpeg",
+                link: "/layanan/service-membran"
               }
             ].map((item, index) => (
               <div key={index} className="w-full">
-                <ScrollReveal direction="up">
-                  <div className="w-full bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6 md:p-8 flex flex-col h-full border border-gray-100 group">
+                <ScrollReveal direction="up" delay={(index % 4) * 0.08}>
+                  <div className="w-full bg-white rounded-3xl shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 transform hover:-translate-y-1 p-6 md:p-8 flex flex-col h-full border border-gray-100 group">
 
                     {/* Tag Label */}
                     <p className="text-secondary font-bold text-[10px] tracking-widest uppercase mb-2">
@@ -470,22 +463,23 @@ export default function Home() {
               <div className="w-full md:w-2/5 p-8 md:p-12 relative flex flex-col justify-center items-center md:items-start text-center md:text-left z-10">
                 <p className="text-gray-200 text-sm md:text-base tracking-widest mb-2 font-medium uppercase">Perhatikan</p>
                 <h2 className="text-secondary text-6xl md:text-7xl font-black mb-3 leading-none drop-shadow-md">4 HAL</h2>
-                <p className="text-white text-sm md:text-base font-medium max-w-[220px] leading-snug">sebelum memasang antena TV atau penangkal petir</p>
+                <p className="text-white text-sm md:text-base font-medium max-w-[220px] leading-snug">sebelum memasang kanopi atau atap membran</p>
 
-                <div
-                  className="w-48 h-48 md:w-64 md:h-64 md:absolute md:-bottom-4 md:right-[-60px] mt-8 md:mt-0 bg-contain bg-no-repeat bg-bottom z-20 opacity-90"
-                  style={{ backgroundImage: "url('/layanan-antena.jpeg')" }}
-                ></div>
+                <div className="w-40 h-40 md:w-56 md:h-56 md:absolute md:-bottom-4 md:right-[-30px] mt-8 md:mt-0 z-20 opacity-90 flex items-center justify-center">
+                  <svg className="w-full h-full text-white/15" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10l9-7 9 7M5 9.5V20h14V9.5" />
+                  </svg>
+                </div>
               </div>
 
               {/* Sisi Kanan: List */}
               <div className="w-full md:w-3/5 p-8 md:p-12 bg-primary-dark z-10 border-l border-white/10">
                 <ul className="space-y-6">
                   {[
-                    "Pastikan kekuatan sinyal di lokasi Anda agar jenis antena (UHF atau parabola) yang dipilih tepat sasaran",
-                    "Gunakan Set Top Box (STB) bersertifikat agar siaran digital tertangkap maksimal dan bebas 'semut'",
-                    "Cek kualitas kabel dan konektor yang dipakai agar gambar tidak mudah hilang saat hujan atau angin",
-                    "Untuk antena tinggi di atap, lengkapi dengan penangkal petir & grounding demi keamanan perangkat elektronik Anda"
+                    "Pastikan luas area dan bentuk atap agar desain kanopi membran yang dipilih tepat sasaran",
+                    "Gunakan kain membran bersertifikat (PVC/PVDF) agar tahan sinar UV dan tidak mudah kusam",
+                    "Cek kualitas rangka baja/galvanis yang dipakai agar kanopi tidak mudah bengkok saat angin kencang",
+                    "Untuk bentang lebar, pastikan perhitungan tegangan membran tepat agar tidak kendur atau menggenang air"
                   ].map((text, index) => (
                     <li key={index} className="flex items-start gap-4 group">
                       <span className="text-secondary mt-1 shrink-0 transform group-hover:scale-110 transition-transform">
@@ -511,10 +505,10 @@ export default function Home() {
         {/* Box Kiri: Keuntungan */}
         <div className="w-full lg:w-2/3 h-full">
           <ScrollReveal direction="up">
-            <div className="w-full h-full bg-[#fdf6f7] border border-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 shadow-sm">
+            <div className="w-full h-full bg-[#f1f8f4] border border-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 shadow-sm">
               <div className="w-full md:w-1/3 shrink-0">
                 <h3 className="text-primary font-bold text-lg md:text-xl mb-4 leading-snug">
-                  Apa Keuntungan Pasang di Hidayah TV ??
+                  Apa Keuntungan Pasang di Hidayah Membrane ??
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Kami berikan layanan terbaik dengan harga transparan tanpa biaya tersembunyi.
@@ -522,11 +516,11 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3">
                 <ol className="list-decimal list-outside ml-4 space-y-4 text-sm text-gray-700 font-medium">
-                  <li className="pl-2">Konsultasi &amp; pengecekan sinyal <span className="text-primary font-bold">GRATIS</span> untuk Anda</li>
-                  <li className="pl-2">Material antena, kabel, dan STB berkualitas (bukan abal-abal)</li>
-                  <li className="pl-2">Pemasangan rapi, kabel tertata, dan bersih kembali setelah pengerjaan</li>
+                  <li className="pl-2">Konsultasi &amp; survei lokasi <span className="text-primary font-bold">GRATIS</span> untuk Anda</li>
+                  <li className="pl-2">Material membran dan rangka berkualitas (bukan abal-abal)</li>
+                  <li className="pl-2">Pemasangan rapi, presisi, dan bersih kembali setelah pengerjaan</li>
                   <li className="pl-2">Setiap pemasangan dilengkapi <span className="text-primary font-bold">GARANSI</span></li>
-                  <li className="pl-2">Respon cepat &amp; bisa dikerjakan di hari yang sama (selama jam operasional)</li>
+                  <li className="pl-2">Pengerjaan tepat waktu sesuai kesepakatan di awal</li>
                   <li className="pl-2">Harga jelas di awal, dijamin <span className="text-primary font-bold">TANPA BIAYA TERSEMBUNYI</span></li>
                 </ol>
               </div>
@@ -539,11 +533,11 @@ export default function Home() {
           <ScrollReveal direction="up">
             <div className="w-full h-full bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
               <h3 className="text-primary font-bold text-lg md:text-xl mb-4 leading-snug">
-                Area Mana Saja yang Dilayani Hidayah TV ??
+                Area Mana Saja yang Dilayani Hidayah Membrane ??
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Kami siap datang ke lokasi Anda di Surabaya, Sidoarjo, Gresik, dan sekitarnya.
-                Untuk wilayah lain seperti Mojokerto, Pasuruan, hingga Lamongan tetap bisa kami
+                Kami siap datang ke lokasi Anda di Jakarta, Tangerang, Bekasi, dan sekitarnya.
+                Untuk wilayah lain seperti Depok, Bogor, hingga Cilegon tetap bisa kami
                 layani dengan perjanjian terlebih dahulu. Hubungi kami untuk memastikan area Anda
                 masuk jangkauan.
               </p>
@@ -565,7 +559,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-primary font-bold text-sm md:text-base mb-1">Tim Teknisi Profesional</h4>
-                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Dikerjakan teknisi handal yang sudah berpengalaman dalam instalasi antena TV, parabola, dan penangkal petir.</p>
+                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Dikerjakan teknisi handal yang sudah berpengalaman dalam instalasi kanopi dan atap membran.</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -579,7 +573,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-primary font-bold text-sm md:text-base mb-1">Respon &amp; Pengerjaan Cepat</h4>
-                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Hubungi kami pagi, antena bisa terpasang hari itu juga. Cepat tanpa mengurangi kerapian.</p>
+                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Survei lokasi cepat dan pengerjaan tepat waktu. Cepat tanpa mengurangi kerapian.</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -592,8 +586,8 @@ export default function Home() {
                   <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <h4 className="text-primary font-bold text-sm md:text-base mb-1">Hasil Jernih &amp; Bergaransi</h4>
-                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Gambar dijamin jernih dan setiap pemasangan bergaransi. Kepuasan Anda prioritas kami.</p>
+                  <h4 className="text-primary font-bold text-sm md:text-base mb-1">Hasil Presisi &amp; Bergaransi</h4>
+                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Hasil pemasangan rapi dan presisi, setiap pekerjaan bergaransi. Kepuasan Anda prioritas kami.</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -610,9 +604,9 @@ export default function Home() {
           <ScrollReveal direction="up">
             <div className="bg-primary text-white p-10 h-full flex flex-col justify-center shadow-lg rounded-sm">
               <p className="text-sm tracking-widest mb-1 font-medium">Spesialis</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">ANTENA &amp; PETIR</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">KANOPI &amp; MEMBRAN</h2>
               <p className="text-sm leading-relaxed mb-8 text-white/90">
-                Ingin siaran TV super jernih sekaligus rumah yang aman dari sambaran petir? Kami menghadirkan instalasi antena, parabola, dan penangkal petir berkualitas tinggi.
+                Ingin carport teduh sekaligus tampilan bangunan yang lebih estetis? Kami menghadirkan instalasi kanopi, atap membran, dan gazebo berkualitas tinggi.
               </p>
               <div className="flex text-secondary gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -643,18 +637,11 @@ export default function Home() {
 
             {/* Grid Foto 6 Buah */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                'antena2.jpeg',
-                'antenatv.jpeg',
-                'parabola-besar.jpg',
-                'penangkal2.jpeg',
-                'service.jpeg',
-                'parabola-kecil.jpg'
-              ].map((filename, index) => (
+              {[5, 6, 7, 8, 9, 50].map((num) => (
                 <div
-                  key={index}
+                  key={num}
                   className="w-full aspect-[4/3] bg-gray-200 bg-cover bg-center cursor-pointer hover:shadow-lg transition-all transform hover:scale-[1.03] duration-300 shadow-sm rounded-2xl overflow-hidden border border-gray-100 group relative"
-                  style={{ backgroundImage: `url('/${filename}')` }}
+                  style={{ backgroundImage: `url('/images-canopy/${num}.jpeg')` }}
                 >
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                     <svg
@@ -695,7 +682,7 @@ export default function Home() {
             </div>
 
             <p className="text-gray-600 text-sm md:text-base w-full lg:w-5/12 text-center lg:text-left leading-relaxed font-medium">
-              Kepercayaan pelanggan adalah aset terbesar kami. Berikut testimoni yang menggambarkan pengalaman mereka bersama <strong className="text-primary">Hidayah TV</strong>.
+              Kepercayaan pelanggan adalah aset terbesar kami. Berikut testimoni yang menggambarkan pengalaman mereka bersama <strong className="text-primary">Hidayah Membrane</strong>.
             </p>
           </div>
 
@@ -711,26 +698,26 @@ export default function Home() {
             </button>
 
             {/* Grid Testimoni */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-0 md:px-8 animate-in fade-in duration-700" key={testiSlide}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-0 md:px-8 animate-fade-in-up" key={testiSlide}>
 
               {[
                 // SLIDE 1 (Index 0)
                 [
-                  { name: "Rina", text: "Pasang antena digital di rumah, sekarang semua channel jernih banget bebas semut. Teknisinya ramah, kerjanya cepat dan rapi. Sangat puas!" },
-                  { name: "Bagas", text: "Dulu TV sering 'No Signal' kalau hujan. Setelah dibenahi Hidayah TV, gambar stabil terus. Respon cepat dan harga masuk akal. Recommended!" },
-                  { name: "Dandy", text: "Pasang parabola buat di rumah yang susah sinyal UHF. Channel-nya banyak, ada lokal sampai olahraga. Mantap pelayanannya!" },
-                  { name: "Maya", text: "Minta dipasang penangkal petir karena antena saya tinggi. Dikerjakan rapi, dijelaskan soal grounding-nya juga. Jadi tenang kalau hujan badai." },
-                  { name: "Heri", text: "Survei lokasi cepat, pemasangan tepat waktu, hasil siaran jernih. Kualitas pengerjaannya tidak mengecewakan." },
-                  { name: "Andri", text: "Setting Set Top Box yang tadinya error langsung beres ditangani teknisinya. Sekarang TV digital lancar. Terima kasih Hidayah TV!" }
+                  { name: "Rina", text: "Pasang kanopi membran carport di rumah, hasilnya rapi banget dan teduh. Teknisinya ramah, kerjanya cepat dan rapi. Sangat puas!" },
+                  { name: "Bagas", text: "Dulu carport sering kehujanan kalau angin miring. Setelah dipasang Hidayah Membrane, aman total. Respon cepat dan harga masuk akal. Recommended!" },
+                  { name: "Dandy", text: "Pasang atap membran buat void ruko yang susah kena panas siang. Desainnya bagus, hasilnya kokoh. Mantap pelayanannya!" },
+                  { name: "Maya", text: "Minta dibuatkan gazebo membran di taman rumah. Dikerjakan rapi, dijelaskan soal rangka dan tegangan membrannya juga. Jadi tenang kalau hujan deras." },
+                  { name: "Heri", text: "Survei lokasi cepat, pemasangan tepat waktu, hasil kanopi kokoh dan presisi. Kualitas pengerjaannya tidak mengecewakan." },
+                  { name: "Andri", text: "Kain membran yang tadinya kendur langsung beres ditangani teknisinya. Sekarang atap membran kembali kencang. Terima kasih Hidayah Membrane!" }
                 ],
                 // SLIDE 2 (Index 1)
                 [
-                  { name: "Dewinta", text: "Antena lama roboh kena angin, langsung dibantu pasang ulang di hari yang sama. Kerjanya bersih dan profesional. Recommended banget!" },
-                  { name: "Alif", text: "Pindah rumah dan butuh bongkar-pasang antena. Semua diurus rapi, gambar langsung jernih di rumah baru. Sangat terbantu." },
-                  { name: "Marissa", text: "Pasang parabola mini, channel religi dan internasional lengkap. Pemasangannya rapi dan teknisinya sabar menjelaskan. Senang sekali!" },
-                  { name: "Kiki", text: "Teknisinya sopan dan jujur soal harga. Tidak ada biaya tambahan aneh-aneh. Hasil siaran digital jernih total." },
-                  { name: "Yusuf", text: "Sangat merekomendasikan Hidayah TV. Dari konsultasi sampai finishing semuanya memuaskan. Gambar TV jadi jernih banget!" },
-                  { name: "Siti", text: "Penangkal petir untuk ruko sudah terpasang dengan grounding yang benar. Sekarang lebih aman saat musim hujan. Sukses terus!" }
+                  { name: "Dewinta", text: "Kanopi lama sobek kena angin, langsung dibantu ganti membran baru di hari yang sama. Kerjanya bersih dan profesional. Recommended banget!" },
+                  { name: "Alif", text: "Renovasi rumah dan butuh bongkar-pasang kanopi. Semua diurus rapi, hasilnya langsung kokoh di rumah baru. Sangat terbantu." },
+                  { name: "Marissa", text: "Pasang tenda membran cafe outdoor, desainnya lengkung modern, tamu jadi betah duduk lama. Pemasangannya rapi dan teknisinya sabar menjelaskan. Senang sekali!" },
+                  { name: "Kiki", text: "Teknisinya sopan dan jujur soal harga. Tidak ada biaya tambahan aneh-aneh. Hasil kanopi membran rapi total." },
+                  { name: "Yusuf", text: "Sangat merekomendasikan Hidayah Membrane. Dari konsultasi sampai finishing semuanya memuaskan. Atap membrannya jadi kokoh banget!" },
+                  { name: "Siti", text: "Atap membran untuk ruko sudah terpasang dengan struktur yang benar. Sekarang lebih aman saat musim hujan. Sukses terus!" }
                 ]
               ][testiSlide].map((testi, index) => (
 
@@ -746,7 +733,7 @@ export default function Home() {
                   </p>
                   {/* Profil Pelanggan */}
                   <div className="flex items-center gap-3 mt-2 pt-4 border-t border-gray-50">
-                    <div className="w-8 h-8 rounded-full bg-rose-50 text-primary flex items-center justify-center font-black text-xs shadow-inner">
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 text-primary flex items-center justify-center font-black text-xs shadow-inner">
                       {testi.name.charAt(0)}
                     </div>
                     <p className="font-bold text-primary text-sm group-hover:text-secondary transition-colors">{testi.name}</p>
@@ -788,9 +775,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
 
           <div className="text-white text-center md:text-left w-full md:w-3/5">
-            <h3 className="text-xl md:text-2xl font-bold mb-2">Gambar TV Anda Sering Hilang?</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-2">Carport Anda Belum Punya Kanopi?</h3>
             <p className="text-sm md:text-base font-medium leading-relaxed">
-              Jangan biarkan tontonan favorit terganggu. Konsultasikan secara <span className="font-bold">GRATIS</span> dengan <span className="font-bold">Hidayah TV</span> dan dapatkan solusi siaran jernih hari ini juga.
+              Jangan biarkan kendaraan dan teras Anda kepanasan atau kehujanan. Konsultasikan secara <span className="font-bold">GRATIS</span> dengan <span className="font-bold">Hidayah Membrane</span> dan dapatkan solusi kanopi terbaik hari ini juga.
             </p>
           </div>
 
@@ -799,7 +786,7 @@ export default function Home() {
               <div className="bg-white text-primary p-2 rounded-full">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               </div>
-              <span className="text-white font-bold text-2xl tracking-wide">08212185448</span>
+              <span className="text-white font-bold text-2xl tracking-wide">{CONTACT.whatsappDisplay}</span>
             </div>
 
             <Link
@@ -828,7 +815,7 @@ export default function Home() {
                 Recent Post
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-8 font-medium">
-                Dapatkan tips, edukasi, dan informasi terbaru seputar antena TV digital, parabola, dan penangkal petir.
+                Dapatkan tips, edukasi, dan informasi terbaru seputar kanopi membran, atap membran, dan perawatannya.
               </p>
 
               <Link
@@ -845,29 +832,29 @@ export default function Home() {
 
               {[
                 {
-                  title: "Cara Mengatasi Sinyal TV Digital yang Sering Hilang",
-                  date: "22 Mei 2026",
-                  image: "/sinyal.jpeg",
-                  slug: "cara-mengatasi-sinyal-tv-digital-hilang"
+                  title: "Cara Merawat Kanopi Membran Agar Awet di Musim Hujan",
+                  date: "5 Juli 2026",
+                  image: "/images-canopy/10.jpeg",
+                  slug: "cara-merawat-kanopi-membran-musim-hujan"
                 },
                 {
-                  title: "Perbedaan Antena Digital UHF Biasa vs Parabola",
-                  date: "10 Mei 2026",
-                  image: "/parabola.jpeg",
-                  slug: "perbedaan-antena-uhf-vs-parabola"
+                  title: "Perbedaan Kanopi Membran PVC dan PVDF",
+                  date: "20 Juni 2026",
+                  image: "/images-canopy/60.jpeg",
+                  slug: "perbedaan-membran-pvc-dan-pvdf"
                 },
                 {
-                  title: "Bahaya Antena TV Tanpa Penangkal Petir di Musim Hujan",
-                  date: "28 April 2026",
-                  image: "/penangkal3.jpeg",
-                  slug: "bahaya-antena-tanpa-penangkal-petir"
+                  title: "Tips Memilih Kain Membran yang Tepat untuk Kanopi",
+                  date: "2 Juni 2026",
+                  image: "/images-canopy/3.jpeg",
+                  slug: "tips-memilih-kain-membran"
                 }
               ].map((article, index) => (
 
                 <Link
                   key={index}
                   href={`/artikel/${article.slug}`}
-                  className="bg-white flex flex-col group cursor-pointer rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden"
+                  className="bg-white flex flex-col group cursor-pointer rounded-3xl shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden"
                 >
                   {/* Gambar Thumbnail */}
                   <div className="relative w-full h-48 bg-gray-200 overflow-hidden">

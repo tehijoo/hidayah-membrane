@@ -3,25 +3,15 @@
 import React, { useState } from 'react';
 
 export default function GaleriPage() {
-  
+
   // State untuk menyimpan halaman yang sedang aktif (mulai dari halaman 1)
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12; // Menampilkan 12 foto per halaman
 
-  // DAFTAR FOTO GALERI (MANUAL)
-  // Silakan isi nama-nama file foto Anda di bawah ini sesuai yang ada di folder 'public'
-  // Anda bebas menambah atau mengurangi jumlah barisnya.
-  const allImages = [
-    '/antena2.jpeg',
-    '/antenatv.jpeg',
-    '/parabola-besar.jpg',
-    '/parabola-kecil.jpg',
-    '/parabola.jpeg',
-    '/penangkal.jpeg',
-    '/penangkal2.jpeg',
-    '/penangkal3.jpeg',
-    // Tambahkan terus nama file foto Anda ke bawah sini dengan tanda kutip dan koma...
-  ];
+  // DAFTAR FOTO GALERI
+  // Seluruh 100 foto dari folder public/images-canopy (1.jpeg - 100.jpeg).
+  // Tambahkan nama file baru ke folder tersebut lalu naikkan angka di sini.
+  const allImages = Array.from({ length: 100 }, (_, i) => `/images-canopy/${i + 1}.jpeg`);
 
   // Logika untuk memotong array gambar berdasarkan halaman yang aktif
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -58,7 +48,7 @@ export default function GaleriPage() {
           <h1 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight">Galeri Foto</h1>
           {/* Garis Aksen Emas */}
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-rose-100 text-lg font-medium opacity-90 italic">Portofolio Hasil Pemasangan Hidayah TV</p>
+          <p className="text-emerald-100 text-lg font-medium opacity-90 italic">Portofolio Hasil Pemasangan Hidayah Membrane</p>
         </div>
       </section>
 
@@ -67,26 +57,26 @@ export default function GaleriPage() {
         <div className="bg-white border-l-4 border-secondary p-6 md:p-10 rounded-2xl shadow-md text-center relative overflow-hidden">
           <svg className="absolute top-2 left-4 w-16 h-16 text-gray-100 transform -rotate-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" /></svg>
           <p className="text-lg md:text-xl text-gray-700 italic font-medium leading-relaxed relative z-10">
-            "Percayakan pemasangan antena &amp; penangkal petir Anda kepada ahlinya, karena kerapian, kejernihan, dan keamanan adalah prioritas utama Hidayah TV."
+            "Percayakan pembuatan kanopi &amp; atap membran Anda kepada ahlinya, karena kerapian, kekokohan, dan estetika adalah prioritas utama Hidayah Membrane."
           </p>
         </div>
       </section>
 
       {/* Grid Gambar Galeri yang Dinamis (Berubah sesuai halaman) */}
-      <section className="container mx-auto max-w-7xl px-4 md:px-8 mt-16 animate-in fade-in duration-500" key={currentPage}>
+      <section className="container mx-auto max-w-7xl px-4 md:px-8 mt-16 animate-fade-in-up" key={currentPage}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          
+
           {currentImages.map((imageUrl, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group relative w-full aspect-[4/3] bg-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100"
             >
               {/* Gambar Background */}
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{ backgroundImage: `url('${imageUrl}')` }}
               ></div>
-              
+
               {/* Overlay & Ikon Kaca Pembesar */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="bg-secondary p-3 rounded-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100 shadow-lg">

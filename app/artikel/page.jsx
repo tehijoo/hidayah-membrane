@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { articles } from './data'; // <-- Pastikan file data.js tetap ada
 
 export const metadata = {
-  title: 'Artikel & Blog – Hidayah TV',
-  description: 'Kumpulan artikel, tips, dan edukasi seputar antena TV digital, parabola, service antena, dan penangkal petir.',
+  title: 'Artikel & Blog – Hidayah Membrane',
+  description: 'Kumpulan artikel, tips, dan edukasi seputar kanopi membran, atap membran, dan gazebo.',
 };
 
 // INI BAGIAN YANG WAJIB ADA (Default Export)
@@ -22,7 +22,7 @@ export default function ArtikelPage() {
           <h1 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight">Blog & Artikel</h1>
           {/* Garis Aksen Emas */}
           <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-rose-100 text-lg font-medium opacity-90 italic">Informasi, Tips, dan Update Terbaru dari Hidayah TV</p>
+          <p className="text-emerald-100 text-lg font-medium opacity-90 italic">Informasi, Tips, dan Update Terbaru dari Hidayah Membrane</p>
         </div>
       </section>
 
@@ -35,13 +35,13 @@ export default function ArtikelPage() {
               href={`/artikel/${article.slug}`} 
               key={article.id} 
               // Kartu Artikel: border-radius lebih melengkung, shadow halus, hover terangkat ke atas
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer border border-gray-100 transform hover:-translate-y-1"
+              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 flex flex-col group cursor-pointer border border-gray-100 transform hover:-translate-y-1"
             >
-              
+
               {/* Gambar Thumbnail */}
               <div className="relative w-full h-56 bg-gray-200 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url('${article.image}')` }}
                 ></div>
                 {/* Badge Label: Warna Emas */}

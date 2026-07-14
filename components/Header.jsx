@@ -19,10 +19,10 @@ export default function Header() {
 
   // Daftar menu layanan agar lebih rapi dan bisa dipakai berulang (Desktop & Mobile)
   const layananMenu = [
-    { label: 'Jasa Pasang Antena TV Digital', slug: 'antena-tv-digital' },
-    { label: 'Jasa Pasang Parabola (Mini & Besar)', slug: 'parabola' },
-    { label: 'Jasa Service & Perbaikan Antena', slug: 'service-antena' },
-    { label: 'Jasa Pemasangan Penangkal Petir', slug: 'penangkal-petir' },
+    { label: 'Kanopi Membran', slug: 'kanopi-membran' },
+    { label: 'Kanopi Alderon', slug: 'kanopi-alderon' },
+    { label: 'Gazebo & Tenda Membran Taman', slug: 'gazebo-tenda-membran' },
+    { label: 'Service & Perbaikan Membran', slug: 'service-membran' },
   ];
 
   return (
@@ -33,18 +33,16 @@ export default function Header() {
       <div className="bg-white/95 backdrop-blur-md py-3 px-4 md:px-8 flex justify-between items-center border-b border-gray-100">
         
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          
-          {/* Gambar logo dibikin bulat (rounded-full) */}
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
           <img
             src="/logo.png"
-            alt="Logo Hidayah TV"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover shadow-md border border-gray-100 bg-white"
+            alt="Logo Hidayah Membrane"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-300 group-hover:scale-105"
           />
 
           <div className="flex flex-col">
-            <h1 className="text-primary font-black text-xl md:text-2xl leading-none">Hidayah TV</h1>
-            <p className="text-secondary text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Antena &amp; Penangkal Petir</p>
+            <h1 className="text-primary font-black text-xl md:text-2xl leading-none">Hidayah Membrane</h1>
+            <p className="text-secondary text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Kanopi &amp; Atap Membran</p>
           </div>
         </Link>
 
@@ -59,7 +57,7 @@ export default function Header() {
               <span>Layanan</span>
               <svg className="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </div>
-            <div className="absolute left-0 top-full w-72 bg-white border border-gray-100 shadow-2xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+            <div className="absolute left-0 top-full w-72 bg-white/95 backdrop-blur-md border border-gray-100 shadow-2xl rounded-b-xl opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 flex flex-col py-2 z-50">
               {layananMenu.map((item) => (
                 <Link 
                   key={item.slug} 
@@ -100,7 +98,7 @@ export default function Header() {
 
       {/* Menu Mobile (Muncul saat diklik di HP) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 animate-in fade-in slide-in-from-top duration-300 overflow-y-auto max-h-[80vh]">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-2xl absolute w-full left-0 animate-fade-in-up overflow-y-auto max-h-[80vh]">
           <div className="flex flex-col p-6 gap-2">
             <Link onClick={() => setIsMobileMenuOpen(false)} href="/" className={getNavLinkClass("/")}>Home</Link>
             <Link onClick={() => setIsMobileMenuOpen(false)} href="/tentang-kami" className={getNavLinkClass("/tentang-kami")}>Tentang Kami</Link>

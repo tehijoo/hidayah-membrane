@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { articles } from '../data'; // <-- Import dari data.js
+import { waLink } from '@/lib/contact';
 
 // Tambahkan "async" di depan function
 export default async function DetailArtikelPage({ params }) {
@@ -43,7 +44,7 @@ export default async function DetailArtikelPage({ params }) {
         {/* Header Artikel (Judul & Info) */}
         <div className="mb-8 text-center md:text-left">
           <span className="bg-amber-100 text-secondary-dark text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
-            INFO ANTENA TV
+            INFO KANOPI MEMBRAN
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             {article.title}
@@ -55,7 +56,7 @@ export default async function DetailArtikelPage({ params }) {
             </div>
             <div className="flex items-center gap-1">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-              <span>Admin Hidayah TV</span>
+              <span>Admin Hidayah Membrane</span>
             </div>
           </div>
         </div>
@@ -81,10 +82,10 @@ export default async function DetailArtikelPage({ params }) {
             Kembali ke Blog
           </Link>
           <a
-            href="https://wa.me/628212185448?text=Halo%20Hidayah%20TV,%20saya%20ingin%20konsultasi%20setelah%20membaca%20artikel."
+            href={waLink("Halo Hidayah Membrane, saya ingin konsultasi setelah membaca artikel.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold shadow-md transition-all transform hover:-translate-y-1"
+            className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold shadow-md transition-all duration-300 transform hover:-translate-y-1"
           >
             Konsultasi Gratis via WhatsApp
           </a>

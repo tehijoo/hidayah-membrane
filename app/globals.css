@@ -1,18 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  /* Maroon Utama (Brand Hidayah TV) */
-  --color-primary: #8b1e2d;
-  --color-primary-dark: #6a1421;
+  /* Hijau Zamrud Utama (Brand Hidayah Membrane) */
+  --color-primary: #0f5c42;
+  --color-primary-dark: #0a3f2d;
 
   /* Kombinasi Abu-abu */
   --color-neutral-bg: #f3f4f6;   /* Abu-abu sangat muda untuk latar belakang */
   --color-neutral-text: #374151; /* Abu-abu tua untuk teks utama */
 
-  /* Warna Aksen (Emas/Gold agar tombol tetap 'menyala' & elegan dengan maroon) */
-  --color-secondary: #d4a017;
-  --color-secondary-dark: #b8860b;
+  /* Warna Aksen (Emas/Bronze agar tombol tetap 'menyala' & elegan dengan hijau zamrud) */
+  --color-secondary: #c8963e;
+  --color-secondary-dark: #a97a2c;
 }
 
 @source "../app";
 @source "../components";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.placeholder-shimmer {
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  background-size: 400px 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
+}
