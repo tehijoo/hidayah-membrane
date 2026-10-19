@@ -1,5 +1,6 @@
 import React from "react";
 import { CONTACT, waLink } from "@/lib/contact";
+import TehijooCredit from "@/components/TehijooCredit";
 
 export default function Footer() {
   return (
@@ -74,12 +75,14 @@ export default function Footer() {
             </svg>
             {CONTACT.address}
           </a>
-
-          <p className="text-[10px] text-gray-400 mt-auto pt-6">
-            © {new Date().getFullYear()} Hidayah Membrane. All Rights Reserved.
-          </p>
         </div>
 
+      </div>
+
+      {/* Baris bawah: copyright klien + kredit pengembang */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+        <p>© {new Date().getFullYear()} Hidayah Membrane. All Rights Reserved.</p>
+        <TehijooCredit variant="text" theme="light" />
       </div>
     </footer>
   );
