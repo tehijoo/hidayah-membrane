@@ -82,7 +82,7 @@ export default function Footer() {
       {/* Baris bawah: copyright klien + kredit pengembang */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-600">
         <p>© {new Date().getFullYear()} Hidayah Membrane. All Rights Reserved.</p>
-        <TehijooCredit variant="text" theme="light" />
+        <TehijooCredit variant="text" from="Hidayah Membrane" theme="light" accent="var(--color-primary, #0f5c42)" />
       </div>
     </footer>
   );
